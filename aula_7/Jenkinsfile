@@ -10,8 +10,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
-                echo 'Running pytest..'
+                echo 'testador de codigo..'
+                echo 'executando o pytest..'
             }
         }
         stage('Build') {

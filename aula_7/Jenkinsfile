@@ -5,13 +5,25 @@ pipeline {
         stage('Init') {
             steps {
                 echo 'Initializing..'
+                sh'apt-get update'
+                sh'apt-get install python3 -y'
+                sh'apt-get install python3-pip -y'
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
         }
         stage('Test') {
             steps {
-                echo 'testador de codigo..'
-                echo 'executando o pytest..'
+                dir('/aula_3') {
+                //sh'python -m pip install --upgrade pip'
+                //sh'pip install -r requirements.txt'
+                sh'pip install -r /app/requirements.txt --break-system-packages'
+                sh'pip install pylint -y'
+                sh'pylint --ignore-patterns "test.*py" ./aula_3/app'
+                sh'pip install pytest -y'
+                sh'pytest'
+            }
+               // echo 'testador de codigo..'
+                //echo 'executando o pytest..'
             }
         }
         stage('Build') {

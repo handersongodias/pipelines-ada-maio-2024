@@ -16,9 +16,9 @@ pipeline {
                 dir('/aula_3') {
                 //sh'python -m pip install --upgrade pip'
                 //sh'pip install -r requirements.txt'
-                sh'pip install -r /app/requirements.txt --break-system-packages'
+                sh'pip install -r aula_4/app/requirements.txt --break-system-packages'
                 sh'pip install pylint'
-                sh'pylint --ignore-patterns "test.*py" ./aula_3/app'
+                sh'pylint --ignore-patterns "test.*py" ./aula_4/app'
                 sh'pip install pytest'
                 sh'pytest'
             }

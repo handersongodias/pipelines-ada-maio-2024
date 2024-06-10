@@ -19,7 +19,7 @@ pipeline {
                 sh'pip install -r .aula_3/app/requirements.txt --break-system-packages'
                 sh'pip install pylint'
                 sh'pylint --ignore-patterns "test.*py" ./aula_3/app'
-                sh'pip install pytest -y'
+                sh'pip install pytest'
                 sh'pytest'
             }
                // echo 'testador de codigo..'

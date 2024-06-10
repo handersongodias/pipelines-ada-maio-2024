@@ -20,7 +20,7 @@ pipeline {
                 sh'pip install pylint --break-system-packages'
                 sh'pylint --ignore-patterns "test.*py" ./aula_4/app'
                 sh'pip install pytest --break-system-packages'
-                sh'pytest aula4/'
+                sh'pytest aula_4/'
             //}
                // echo 'testador de codigo..'
                 //echo 'executando o pytest..'
